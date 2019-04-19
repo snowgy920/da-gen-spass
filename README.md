@@ -1,2 +1,4 @@
 # da-gen-spass
-Generate Secure Password
+Wordpress Secure Password Plugin
+# Shortcode
+[da_genspass]
