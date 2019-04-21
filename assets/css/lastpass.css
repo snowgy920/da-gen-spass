@@ -75,8 +75,12 @@
 .generator-container input {
     line-height: 16px !important;
     padding: 0 !important;
+    margin: 0 !important;
     border: none !important;
-    border: none !important;
+    box-shadow: none !important;
+}
+.generator-container img {
+    background: none !important;
 }
 
 /**
@@ -170,7 +174,6 @@ input.da-password {
 
     /* Presets for input */
     border: none !important;
-    box-shadow: none !important;
     background-color: transparent !important;
     padding: 1px 0 !important;
 }
