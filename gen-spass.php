@@ -27,7 +27,7 @@ define( 'DA_GSP_PLUGIN_NAME', trim( dirname( DA_GSP_PLUGIN_BASENAME ), '/' ) );
 
 define( 'DA_GSP_PLUGIN_DIR', untrailingslashit( dirname( DA_GSP_PLUGIN ) ) );
 
-define( 'DA_GSP_PLUGIN_URL', get_home_url( null, '/wp-content/plugins/da-gen-spass' ) );
+define( 'DA_GSP_PLUGIN_URL', get_home_url( null, '/wp-content/plugins/'.DA_GSP_PLUGIN_NAME ) );
 
 require_once DA_GSP_PLUGIN_DIR . '/Includes/functions.php';
 require_once DA_GSP_PLUGIN_DIR . '/Includes/init.php';
