@@ -366,10 +366,11 @@ span.pass-regen {
     width: 220px;
     height: 5px;
     background-color: var(--border-color);
-    outline: none;
-    margin: 2px 0 3px
+    outline: none !important;
+    margin: 2px 0 4px !important;
 
     border-radius: var(--border-radius);
+
 }
 
 .da-option .pass-length::-webkit-slider-thumb {
