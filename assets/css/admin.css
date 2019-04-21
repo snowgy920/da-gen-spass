@@ -1,0 +1,11 @@
+.tab-content {
+    display: none;
+    padding: 15px 0;
+}
+.tab-content.tab-content-active {
+    display: block;
+}
+
+.nav-tab:focus, .nav-tab:hover {
+    box-shadow: none;
+}
