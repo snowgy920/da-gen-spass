@@ -67,6 +67,9 @@ jQuery(document).ready(function ($){
 		$('.da-generator-container .customization').toggleClass("collapsed");
 	});
 
+	$('#pass_length').on('input', function () {
+		$(this).trigger('change');
+	});
 	$('#pass_length').change(function(){
 		$('#pass_length_value').val($(this).val());
 		$('#btn_gen_pass').click();
