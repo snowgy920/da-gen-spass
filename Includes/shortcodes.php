@@ -24,21 +24,7 @@ class DA_GSP_Shortcode {
     }
 
     function shortcode_handler( $atts , $content="" ) {
-        $output = <<<E
-<!-- GENERATOR -->
-<div class="generator-container">
-    <!-- Generator Tools -->
-    <form id="generator-form" class="generator__tools">
-        
-        <!-- Password Field -->
-        <div class="password-field">
-            <input class="password da-sec-pass success" type="text" value="">
-            <span class="da-pass-score"></span>
-        </div>
-        </form>
-</div>
-E;
-        return $output;
+        return render_view('PassForm');
     }
 
     public static function getInstance() {

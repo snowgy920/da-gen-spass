@@ -1,76 +1,106 @@
+:root {
+    --main-color: #D32D27;
+    --text-color: #282828;
+    --background-color: #F9FBFD;
+    --border-color: #E8E8E8;
+    --customization-color: #727272;
+
+    /**
+     * Strength Colors
+    */
+    --orange: #F19B2B;
+    --yellow: #D8D145;
+    --light-green: #98CB6F;
+    --green: #5FD889;
+
+    /**
+     * Shadow for Password Field
+    */
+    --pass-shadow: 0 18px 15px 0 rgba(0, 0, 0, .22);
+    --tooltip-shadow: 0 4px 5px 0 rgba(0, 0, 0, .22);
+    --thumb-shadow: var(--tooltip-shadow);
+
+    /**
+     * Border Width for;
+     * Radio and Checkbox, Input[type=number], Customizatin Section,
+    */
+    --border-width: 2px;
+
+    /**
+     * Border Radius for;
+     * Wrappers, Checkboxes, Input[type=number], button 
+    */
+    --border-radius: 10px;
+    --border-radius-checkbox: 5px;
+
+    /**
+     * Font Sizes
+     */
+    --top-header: 35px; /* GENERATE A SECURE PASSWORD */
+    --middle-header: 25px; /* Use our online password generator ... */
+    --password-field: 30px; /* SWdbDn4N0Y */
+    --others: 16px;
+
+    /**
+     * Breakpoints
+     * Just for information
+    */
+    --lg: 1024px;
+    --md: 768px;
+    --sm: 576px;
+    --xs: 435px;
+    --xxs: 375px;
+}
+
 /**
  * Presets
  */
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+.generator-container *,
+.generator-container *::before,
+.generator-container *::after {
+    box-sizing: border-box !important;
+    max-width: unset !important;
 }
 
-html,
-body {
-    font-family: "Source Sans Pro", sans-serif;
-    margin: 0;
-    padding: 0;
+.generator-container, .generator-container h6, .generator-container label {
+    font-family: "Source Sans Pro", sans-serif !important;
+    letter-spacing: normal !important;
+}
+.generator-container {
+    line-height: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.generator-container input {
+    line-height: 16px !important;
+    padding: 0 !important;
+    border: none !important;
+    border: none !important;
 }
 
 /**
  * STYLES
  */
 
-/* Wrapper's Temporary STYLES */
-.wrapper {
-    background-color: var(--background-color);
-
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-/* Top Header */
-h2.top-header {
-    text-align: center;
-    font-weight: 400;
-    font-size: var(--top-header);
-
-    margin-bottom: 22px;
-}
-
-/* Middle Header */
-h4.mid-header {
-    text-align: center;
-    font-weight: 400;
-    font-size: var(--middle-header);
-
-    margin-top: 0;
-}
-
 /* Low Header */
 h6.low-header {
-    font-weight: 600;
-    text-align: center;
-    font-size: var(--others);
-    color: var(--customization-color);
+    font-weight: 600 !important;
+    text-align: center !important;
+    font-size: var(--others) !important;
+    color: var(--customization-color) !important;
 
-    margin: 0 0 20px 0;
+    margin: 0 0 20px 0 !important;
+    line-height: 20px;
 }
 h6.low-header.toggle {
-    cursor: pointer;    
+    cursor: pointer;
 }
 h6.low-header.toggle::after{
     display: inline-block;
     content: "\f107";
     font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-}
-
-/* Highlights for Headers */
-.top-header span.highlight {
-    color: var(--main-color);
-}
-
-.mid-header span.highlight {
-    font-style: italic;
+    font-weight: 900 !important;
 }
 
 /**
@@ -80,8 +110,10 @@ h6.low-header.toggle::after{
     display: flex;
     justify-content: center;
 
-    width: fit-content;
-    margin: 100px auto 40px;
+    /* width: fit-content; */
+    width: 100% !important;
+    max-width: 665px !important;
+    margin: 100px auto 40px !important;
 
 }
 @media screen and (max-width: 1024px) {
@@ -90,48 +122,25 @@ h6.low-header.toggle::after{
     }
 }
 
-/* Generator Img, SVG */
-.generator__img {
-    width: 400px;
-    margin-right: 50px;
-}
-@media screen and (max-width: 1024px) {
-    .generator__img {
-        margin: 0 auto 30px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .generator__img {
-        width: 315px;
-    }
-}
-
-.generator__img img {
-    width: 100%;
-}
-
 /* Generator Tools */
 .generator__tools {
-    width: 665px;
+    width: 100%;
+    /* max-width: 665px; */
 }
-@media screen and (max-width: 768px) {
-    .generator__tools {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
     .generator__tools {
         width: calc(100% - 30px);
         margin: 0 auto;
     }
-}
+} */
 
 /* Generated Password Field */
-.password-field {
+.da-password-field {
     display: flex;
     position: relative;
 
     align-items: center;
+    line-height: 14px;
 
     width: 100%;
     height: 90px;
@@ -140,44 +149,62 @@ h6.low-header.toggle::after{
     
     background-color: #fff;
 }
-@media screen and (max-width: 435px) {
-    .password-field {
+/* @media screen and (max-width: 435px) {
+    .da-password-field {
         height: 55px;
     }
+} */
+.da-password-field img {
+    all: unset !important;
+    height: 30px !important;
 }
 
 /* Password Styles for text-meter */
-input.password {
-    font-size: var(--password-field);
-    width: 100%;
-    text-indent: 27px;
-    color: var(--text-color);
+input.da-password {
+    font-family: Arial !important;
+    font-size: var(--password-field) !important;
+    width: 100% !important;
+    text-indent: 27px !important;
+    color: var(--text-color) !important;
 
     /* Presets for input */
-    border: none;
-    background-color: transparent;
+    border: none !important;
+    background-color: transparent !important;
+    padding: 1px 0 !important;
 }
-@media screen and (max-width: 435px) {
+/* @media screen and (max-width: 435px) {
     :root {
         --password-field: 25px;
     }
+} */
+
+input.da-password:focus {
+    outline: none !important;
 }
 
-input.password:focus {
-    outline: none;
+input.da-password.da-str-strong, input.da-password.da-str-very-strong {
+    color: var(--green) !important;
+}
+input.da-password.da-str-fair {
+    color: var(--light-green) !important;
+}
+input.da-password.da-str-weak {
+    color: var(--yellow) !important;
+}
+input.da-password.da-str-very-weak {
+    color: var(--orange) !important;
 }
 
-input.password.success {
-    color: var(--green);
-}
 
 /* Copy and Regenerate spans */
 span.pass-copy {
     margin-right: 12px;
+    cursor: pointer;
 }
 
 span.pass-regen {
     margin-right: 20px;
+    cursor: pointer;
 }
 
 /**
@@ -186,12 +213,12 @@ span.pass-regen {
 .customization {
     width: 100%;
 
-    border: var(--border-width) solid var(--border-color);
-    border-radius: var(--border-radius);
-    background-color: #fff;
+    border: var(--border-width) solid var(--border-color) !important;
+    border-radius: var(--border-radius) !important;
+    background-color: #fff !important;
 
-    margin-top: 40px;
-    padding: 15px 25px 20px;
+    margin-top: 40px !important;
+    padding: 15px 25px 20px !important;
 }
 
 /**
@@ -199,18 +226,18 @@ span.pass-regen {
 */
 
 .customization.collapsed {
-    padding: 15px;
-    border-style: dashed;
+    padding: 15px !important;
+    border-style: dashed !important;
 }
 
 /* Hide Options */
-.customization.collapsed .options {
+.customization.collapsed .da-options {
     display: none;
 }
 
 /* Centerized header */
 .customization.collapsed h6.low-header {
-    margin: 0;
+    margin: 0 !important;
 }
 
 /* Rotate Arrow */
@@ -219,17 +246,20 @@ span.pass-regen {
 }
 
 /* Option for Customization */
-.option {
+.da-option {
     display: flex;
     align-items: center;
 }
-@media screen and (max-width: 768px) {
-    .option {
+/* @media screen and (max-width: 768px) {
+    .da-option {
         flex-direction: column;
     }
-}
+} */
 
-.option:not(:last-child) {
+.da-option:last-child {
+    line-height: 20px;
+}
+.da-option:not(:last-child) {
     margin-bottom: 30px;
 }
 
@@ -237,53 +267,54 @@ span.pass-regen {
     color: var(--customization-color);
     font-size: var(--others);
     margin-right: 18px;
+    white-space: nowrap;
 }
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .option__title {
         margin: 0 0 15px 0;
     }
-}
+} */
 
 .option__field {
     display: flex;
     align-items: center;
 }
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
     .option__field {
         flex-wrap: wrap;
         justify-content: center;
     }
-}
+} */
 
 .option__field__item {
     display: flex;
     align-items: center;
 }
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
     .option__field__item {
         margin-bottom: 10px;
     }
-}
+} */
 /* Media Queries for characters options */
-@media screen and (max-width: 576px) {
-    .option__field.characters .option__field__item {
+/* @media screen and (max-width: 576px) {
+    .option__field.da-allow-characters .option__field__item {
         width: 175px;
         margin-right: 0;
     }
 
-    .option__field.characters .option__field__item:nth-child(odd) {
-        justify-content: flex-end;
-        padding-right: 15px;
+    .option__field.da-allow-characters .option__field__item:nth-child(odd) {
+        /* justify-content: flex-end; /
+        padding-left: 60px;
     }
-}
+} */
 @media screen and (max-width: 435px) {
-    .option__field.characters .option__field__item {
+    .option__field.da-allow-characters .option__field__item {
         width: 115px;
     }
 }
 /* Media Queries for Password types' options */
 @media screen and (max-width: 435px) {
-    .option__field.types {
+    .option__field.da-pass-types {
         width: 170px;
         justify-content: flex-start;
         margin: 0 auto;
@@ -295,8 +326,8 @@ span.pass-regen {
 }
 
 /* Disable Spin button in input[type=number] */
-.option input[type=number]::-webkit-inner-spin-button,
-.option input[type=number]::-webkit-outer-spin-button {
+.da-option input[type=number]::-webkit-inner-spin-button,
+.da-option input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
@@ -304,26 +335,27 @@ span.pass-regen {
 /**
  * Input Number STYLES
 */
-.option input[type=number] {
-    width: 70px;
-    height: 40px;
-    padding: 10px;
-    text-align: center;
-    color: var(--text-color);
+.da-option input[type=number] {
+    width: 70px !important;
+    height: 40px !important;
+    padding: 10px !important;
+    text-align: center !important;
+    color: var(--text-color) !important;
 
-    background-color: var(--border-color);
-    border: none;
-    border-radius: var(--border-radius);
+    background-color: var(--border-color) !important;
+    border: none !important;
+    border-radius: var(--border-radius) !important;
+    font: 400 13.3333px Arial !important;
 }
 
-.option input[type=number]:focus {
-    outline: none;
+.da-option input[type=number]:focus {
+    outline: none !important;
 }
 
 /**
  * Input Range STYLES
 */
-.option .pass-length {
+.da-option .pass-length {
     -webkit-appearance: none;
     appearance: none;
     width: 220px;
@@ -334,7 +366,7 @@ span.pass-regen {
     border-radius: var(--border-radius);
 }
 
-.option .pass-length::-webkit-slider-thumb {
+.da-option .pass-length::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
 
@@ -345,7 +377,7 @@ span.pass-regen {
     box-shadow: var(--thumb-shadow);
 }
 
-.option .pass-length::-moz-range-thumb {
+.da-option .pass-length::-moz-range-thumb {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -357,60 +389,60 @@ span.pass-regen {
  * Input Checkbox STYLES
 */
 .checkbox-container {
-    display: block;
-    position: relative;
-    padding-left: 30px;
-    cursor: pointer;
-    font-size: var(--others);
-    color: var(--text-color);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    display: block !important;
+    position: relative !important;
+    padding-left: 30px !important;
+    cursor: pointer !important;
+    font-size: var(--others) !important;
+    color: var(--text-color) !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
 }
   
 /* Hide the browser's default checkbox */
 .checkbox-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+    position: absolute !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+    height: 0 !important;
+    width: 0 !important;
 }
   
 /* Create a custom checkbox */
 .checkbox-container .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 22px;
-    width: 22px;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 22px !important;
+    width: 22px !important;
 
-    background-color: #fff;
-    border: var(--border-width) solid var(--border-color);
-    border-radius: var(--border-radius-checkbox);
+    background-color: #fff !important;
+    border: var(--border-width) solid var(--border-color) !important;
+    border-radius: var(--border-radius-checkbox) !important;
 }
   
 /* On mouse-over, add a grey background color */
 .checkbox-container:hover input ~ .checkmark {
-    border-color: var(--customization-color);
+    border-color: var(--customization-color) !important;
 }
   
 /* When the checkbox is checked, add a blue background */
 .checkbox-container input:checked ~ .checkmark {
-    border-color: var(--main-color);
+    border-color: var(--main-color) !important;
 }
   
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkbox-container .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+    content: "" !important;
+    position: absolute !important;
+    display: none !important;
 }
   
 /* Show the checkmark when checked */
 .checkbox-container input:checked ~ .checkmark:after {
-    display: block;
+    display: block !important;
 }
   
 /* Style the checkmark/indicator */
@@ -499,6 +531,7 @@ span.pass-regen {
     position: absolute;
     width: 200px;
     font-size: 16px;
+    line-height: normal;
     z-index: 1040;
 
     cursor: pointer;
@@ -516,7 +549,7 @@ span.pass-regen {
  * Button Styles
 */
 
-button.copy-button {    
+button.da-copy-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -524,6 +557,8 @@ button.copy-button {
     color: #fff;
     background-color: var(--main-color);
     font-size: var(--others);
+    font-weight: 400;
+    font-family: Arial;
 
     width: 225px;
     height: 45px;
@@ -536,6 +571,60 @@ button.copy-button {
     cursor: pointer;
 }
 
-button.copy-button img {
+button.da-copy-button img {
     margin-left: 10px;
+}
+
+.pass-length-value {
+    font: 400 13.3333px Arial;
+}
+
+@element .generator-container and (max-width: 664px) {
+    :self {
+        width: calc(100% - 20px);
+        margin: 0 auto;
+    }
+    .da-option {
+        flex-direction: column;
+    }
+    .option__title {
+        margin: 0 0 15px 0;
+    }
+}
+@element .generator-container and (max-width: 535px) {
+    .option__field {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .option__field__item {
+        margin-bottom: 10px;
+    }
+
+    .option__field.da-allow-characters .option__field__item {
+        width: 175px;
+        margin-right: 0;
+    }
+
+    .option__field.da-allow-characters .option__field__item:nth-child(odd) {
+        /* justify-content: flex-end; */
+        padding-left: 60px;
+    }
+}
+@element .generator-container and (max-width: 403px) {
+    .da-password-field {
+        height: 55px;
+    }
+    :root {
+        --password-field: 25px;
+    }
+    .option__field.da-allow-characters .option__field__item {
+        width: 118px;
+    }
+    .option__field.da-allow-characters .option__field__item:nth-child(odd) {
+        padding-right: 15px;
+        padding-left: 0;
+    }
+    .option__title {
+        line-height: normal;
+    }
 }
