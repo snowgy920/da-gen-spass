@@ -18,7 +18,6 @@ jQuery(document).ready(function ($){
 			},
 			success: function (res) {
 				$('#da_sec_password').removeClassRegex(/^da-str-/).addClass("da-str-"+res.score_label);
-				// $('#da_sec_password').next().text(res.score + ":" + res.score_label);
 			}
 		});
 	}

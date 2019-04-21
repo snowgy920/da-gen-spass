@@ -1,3 +1,27 @@
+<?php
+$color = get_option('da_gen_spass_color');
+$font1 = get_option('da_gen_spass_font1');
+$font2 = get_option('da_gen_spass_font2');
+?>
+<style>
+<?php if (!empty($font1)) { ?>
+.generator-container input, .generator-container button {
+    font-family: "<?php echo $font1; ?>", sans-serif !important;
+}
+<?php } ?>
+
+<?php if (!empty($font2)) { ?>
+.generator-container, .generator-container h6, .generator-container label {
+    font-family: "<?php echo $font2; ?>", sans-serif !important;
+}
+<?php } ?>
+<?php if (!empty($color)) { ?>
+.generator-container, .generator-container h6, .generator-container label,
+.generator-container .option__title, .generator-container .switch-label, .da-option input[type=number] {
+    color: <?php echo $color; ?> !important;
+}
+<?php } ?>
+</style>
 <!-- GENERATOR -->
 <div class="generator-container">
 

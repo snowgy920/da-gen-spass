@@ -15,7 +15,9 @@ add_action( 'wp_enqueue_scripts', 'enqueueScripts' );
 
 function enqueueStyles() {
     wp_enqueue_style( 'load-fa', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css' );
-    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' );
+
+    $font2 = urlencode( get_option('da_gen_spass_font2') );
+    wp_enqueue_style( 'google-fonts', "https://fonts.googleapis.com/css?family=$font2:400,600,700" );
     wp_enqueue_style( 'da-gen-spass', da_gen_plugin_url( 'assets/css/lastpass.css' ), array() );
 }
 add_action( 'wp_enqueue_scripts', 'enqueueStyles', 999 );

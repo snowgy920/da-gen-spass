@@ -4,14 +4,20 @@ if ( ! defined( 'WPINC' ) ) {
     die();
 }
 
-add_action( 'admin_enqueue_scripts', 'wptuts_add_color_picker' );
-function wptuts_add_color_picker( $hook ) {
+add_action( 'admin_enqueue_scripts', 'da_enqueue_styles' );
+function da_enqueue_styles( $hook ) {
     if( is_admin() ) {
-        // Add the color picker css file       
-        wp_enqueue_style( 'wp-color-picker' ); 
-        wp_enqueue_style( 'da-gen-spass-admin', da_gen_plugin_url( 'assets/css/admin.css' ), array() );
-        
-        // Include our custom jQuery file with WordPress Color Picker dependency
+        wp_enqueue_style( 'da-gen-bootstrap-style', da_gen_plugin_url( 'assets/css/bootstrap.min.css' ), array() );
+        wp_enqueue_style( 'da-gen-bootstrap-formhelpers-style', da_gen_plugin_url( 'assets/css/bootstrap-formhelpers.min.css' ), array() );
+        wp_enqueue_style( 'da-gen-spass-admin', da_gen_plugin_url( 'assets/css/admin.css' ), array('wp-color-picker') );
+    }
+}
+
+add_action( 'admin_enqueue_scripts', 'da_enqueue_scripts' );
+function da_enqueue_scripts( $hook ) {
+    if( is_admin() ) {
+        wp_enqueue_script( 'da-gen-bootstrap-script', da_gen_plugin_url( 'assets/js/bootstrap.min.js' ), array( 'jquery' ), '', true ); 
+        wp_enqueue_script( 'da-gen-bootstrap-formhelpers-script', da_gen_plugin_url( 'assets/js/bootstrap-formhelpers.min.js' ), '', true ); 
         wp_enqueue_script( 'da-gen-spass-admin', da_gen_plugin_url( 'assets/js/admin.js' ), array( 'jquery', 'wp-color-picker' ), '', true ); 
     }
 }
@@ -20,7 +26,8 @@ add_action( 'admin_init', 'register_settings_cb' );
 function register_settings_cb(){
     // - register_setting( $option_group, $option_name, $sanitize_callback );
     register_setting('da-gen-pass-settings', 'da_gen_spass_color' );
-    register_setting('da-gen-pass-settings', 'da_gen_spass_font_size' );
+    register_setting('da-gen-pass-settings', 'da_gen_spass_font1' );
+    register_setting('da-gen-pass-settings', 'da_gen_spass_font2' );
 }
 
 
