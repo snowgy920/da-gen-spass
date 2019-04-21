@@ -570,6 +570,8 @@ button.da-copy-button {
     border: none;
     padding: .375rem .675rem;
     cursor: pointer;
+    text-transform: none !important;
+    letter-spacing: normal !important;
 }
 
 button.da-copy-button img {
