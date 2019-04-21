@@ -170,6 +170,7 @@ input.da-password {
 
     /* Presets for input */
     border: none !important;
+    box-shadow: none !important;
     background-color: transparent !important;
     padding: 1px 0 !important;
 }
